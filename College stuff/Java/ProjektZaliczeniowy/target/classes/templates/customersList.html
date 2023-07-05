@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Lista użytkowników</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous"></link>
+    </head>
+    <body>
+        <h1>Zastosowanie DAO + Model w Thymeleaf</h1>
+        <a th:href="@{/showAddCustomerForm}" class="btn btn-primary"><i class="fas fa-user-plus ml-1"></i></a>
+        <div th:switch="${customers}">
+            <h2 th:case="null">No customers yet!</h2>
+            <div th:case="*">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Imię</th>
+                            <th>Nazwisko</th>
+                            <th>Operacje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="customer : ${customers}">
+                            <td th:text="${customer.id}"></td>
+                            <td th:text="${customer.firstName}"></td>
+                            <td th:text="${customer.lastName}"></td>
+                            <td>
+                                <a th:href="@{/showEditCustomerForm/{id}(id=${customer.id})}"
+                                   class="btn btn-primary"><i class="fas fa-user-edit ml-1"></i></a>
+                                <a th:href="@{/deleteCustomer/{id}(id=${customer.id})}"
+                                   class="btn btn-primary"><i class="fas fa-user-times ml-1"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        Ilość zapytań CRUD podczas sesji: <span th:text="${counterValue}"></span> <br/><br/>
+        <a th:href="@{/}">Strona główna</a> <br/>
+        <a th:href="@{/logout}" class="btn btn-primary">Wyloguj <i class="fas fa-sign-out-alt"></i></a>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+com\tss\entities\Customer.class
+com\tss\config\SecurityConfig.class
+com\tss\controllers\RestCustomerController.class
+com\tss\config\WebSocketConfig.class
+com\tss\websockets\WebSocketEndpointJSON.class
+com\tss\controllers\WebSocketController.class
+com\tss\repositories\CustomerRepository.class
+com\tss\components\SessionComponent.class
+com\tss\controllers\MainController.class
+com\tss\controllers\CustomerController.class
+com\tss\ProjektZaliczeniowy\ProjektZaliczeniowyApplication.class
+com\tss\ProjektZaliczeniowy\ServletInitializer.class

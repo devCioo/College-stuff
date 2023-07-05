@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>WebSocket</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" th:src="@{/functionsWebSockets.js}"></script>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </head>
+    <body>
+        <form action="">
+            <input onclick="doSend(messageTextID.value)" value="Wyślij..." type="button"/>
+            <input id="messageTextID" name="messageText" value="Hello WebSocket!" type="text"/> <br/>
+            <input id="messageStatusID" name="messageStatus" value="...." type="text" size="60"/> <br/>
+            <div style="text-align: center;">
+                <div id="chartContainer" style="height: 300px; width: 50%;"></div>
+            </div>
+        </form>
+    </body>
+</html>

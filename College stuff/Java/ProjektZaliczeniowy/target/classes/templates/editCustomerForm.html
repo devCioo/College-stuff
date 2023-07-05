@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Edycja użytkownika</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous"></link>
+    </head>
+    <body>
+        <form action="#" th:action="@{/editcustomer/{id}(id=${customer.id})}" th:object="${customer}" method="post">
+            <div class="form-group">
+                <label for="name">Identyfikator</label>
+                <input type="text" th:field="*{id}" id="id" placeholder="Identyfikator" readonly/>
+            </div>
+            <div class="form-group">
+                <label for="name">Imię</label>
+                <input type="text" th:field="*{firstName}" id="firstName" placeholder="Imię"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Nazwisko</label>
+                <input type="text" th:field="*{lastName}" id="lastName" placeholder="Nazwisko"/>
+            </div>
+            <input type="submit" value="Zapisz zmiany"/>
+        </form>
+    </body>
+</html>

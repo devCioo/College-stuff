@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Projekt zaliczeniowy</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"></link>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous"></link>
+    </head>
+    <body>
+        <h1>Logowanie zakończone sukcesem</h1>
+            <a th:href="@{/customersList}">Lista użytkowników</a> <br/>
+            <a th:href="@{/customers}">REST JSON</a> <br/>
+            <a th:href="@{/webSocketJSON}">WebSocket z użyciem JSON</a> <br/>
+            <a th:href="@{/logout}" class="btn btn-primary">Wyloguj <i class="fas fa-sign-out-alt"></i></a> <br/><br/>
+        <h4>Spring Boot Actuator</h4>
+            <a th:href="@{/actuator}">Ogólne informacje z Actuatora</a> <br/>
+        Parametry z pliku pom.xml przez application.properties - Wersja JDK: <span th:text="${myJDKVersion}"></span> <br/>
+        Parametry z pliku pom.xml przez application.properties - Wersja Spring Boot Starter: <span th:text="${springBootVersion}"></span> <br/>
+        Parametry z Mavena przez application.properties - Nazwa aplikacji: <span th:text="${applicationName}"></span> <br/>
+        Parametry z Mavena przez application.properties - Wersja builda: <span th:text="${buildVersion}"></span> <br/>
+        Parametry z Mavena przez application.properties - Czas kompilacji: <span th:text="${buildTimestamp}"></span> <br/>
+        Wersja Spring: <span th:text="${springVersion}"></span> <br/>
+    </body>
+</html>
